@@ -69,6 +69,7 @@ public Usuario buscarusuario(String email, String pass){
 				u.setdni(rs.getInt("dni"));
 				u.setNombre(rs.getString("nombre"));
 				u.setApellido(rs.getString("apellido"));
+				u.setEmail(email);
 								
 			}
 		} catch (SQLException e) {
