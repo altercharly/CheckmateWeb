@@ -1,4 +1,4 @@
-<%@page import="entidades.Usuario"%>
+<%@page import="entidades.*"%>
 <%@page import="negocio.*"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -17,30 +17,37 @@
 //aquí leo los demás params 
 Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 <h1 aligne="center" style="font-weight:bold"> Usuario: <%=u.getNombre()%></h1> 
-<div class="partida">
+
+<div>
 	<form class="form-redirect" name="redirect" action="" method="post" >
 	<table aligne="center">
 	<br>
 	<tr>
-	<td> dni del contrincante: </td>
+	<td aligne="right"> dni del contrincante: </td>
 	<td><input type="text" name="idcont" id="idcont"></td>
 	</tr>
 	<tr><input type="submit" value="nueva partida"></tr>
 	</table>
 	</form>
-</div>		
-<div style="margin: auto"> Partidas en curso:
+</div>
+		
+<div style="margin: auto">
+	<% ArrayList<Partida> p = new ArrayList<Partida>(); %>
+	<% //p =cont.buscarpartida(dni1);                           cambiar por el request necesario %>
+	<p aligne="center" color="blue"> Partidas en curso: </p>
 	<form class="form-redirect" name="redirectpart" action="" method="post">
-	<select name="partidas" size="15">
-	<%if (p!=null){ %>
-	<%for(int i = 0; i < p.size() + 1; i++) { %>
-	<%model.addElement(p.get(i));%>
-	<% return model;%>
-	<%} %>
-	<%} %>
-	<%else {JOptionPane.showMessageDialog(null, "No hay partidas cargadas");return null;} %>
-	<option value="<%= t %>"> <%= t %> </option>
+	<table aligne="center">
+	<select name="partidas">
+	<% if (p!=null){ %>
+	<% for(int i = 0; i < p.size() + 1; i++) { %>
+	<option value="<%= p.get(i) %>"></option>
+	<% } %>
+	<% } %>
 	</select>
+	<% if (p == null) { %>
+	<p aligne="center" color="red"> No tiene partidas en curso </p>
+	<% } %>
+	</table>
 	</form>
 </div>	
 
