@@ -19,7 +19,7 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 <h1 aligne="center" style="font-weight:bold"> Usuario: <%=u.getNombre()%></h1> 
 
 <div>
-	<form class="form-redirect" name="redirect" action="<%//debería llamar a partida.html si no estoy mal %>" method="post" >
+	<form class="form-redirect" name="redirect" action="<%//debería llamar a partida.jsp si no estoy mal %>" method="post" >
 	<table aligne="center">
 	<br>
 	<tr>
@@ -35,7 +35,7 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 	<% ArrayList<Partida> p = new ArrayList<Partida>(); %>
 	<% //p =cont.buscarpartida(dni1);                           cambiar por el request necesario %>
 	<p aligne="center" color="blue"> Partidas en curso: </p>
-	<form class="form-redirect" name="redirectpart" action="<%//debería llamar a partida.html si no estoy mal %>" method="post">
+	<form class="form-redirect" name="redirectpart" action="<%//debería llamar a partida.jsp si no estoy mal %>" method="post">
 	<table aligne="center">
 	<select name="partidas">
 	<% if (p!=null){ %>
