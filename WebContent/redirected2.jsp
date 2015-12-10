@@ -24,7 +24,7 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 	<br>
 	<tr>
 	<td aligne="right"> dni del contrincante: </td>
-	<td><input type="text" name="idcont" id="idcont"></td>
+	<td><input type="text" name="dnicont" id="dnicont"></td>
 	</tr>
 	<tr><input type="submit" value="nueva partida"></tr>
 	</table>

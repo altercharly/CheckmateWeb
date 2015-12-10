@@ -13,8 +13,8 @@
 <body>
 <% Usuario u = (Usuario)request.getAttribute("user");
  Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
- <% Usuario cont = (Usuario)request.getAttribute("contrincante"); %>
-<% Partida p = (Partida)request.getAttribute("partidaselect"); %>
+ <% Usuario cont = (Usuario)request.getAttribute("jug2"); %>
+<% Partida p = (Partida)request.getAttribute("partida"); %>
 <h1 aligne="center" style="font-weight:bold"> IdPartida: <%=p.getid()%></h1> 
 <form class="form-partida" name="partida" action="" method="get">
 <p aligne="center" color="red"> Turno jugador: <%cont.getApellido() ; %> <%cont.getNombre() ; %></p>

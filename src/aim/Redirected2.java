@@ -43,7 +43,7 @@ public class Redirected2 extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		Usuario jug1 = (Usuario) session.getAttribute("user");
-		String dni=request.getParameter("dni2");
+		String dni=request.getParameter("dnicont");
 		//response.getWriter().append(email).append(": ").append(pass);
 		int dni2=Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
@@ -54,7 +54,7 @@ public class Redirected2 extends HttpServlet {
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
-response.sendRedirect("/CheckmateWeb/Partida.jsp");
+			response.sendRedirect("/CheckmateWeb/Partida.jsp");
 
 			
 		
