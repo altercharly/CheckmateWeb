@@ -53,10 +53,10 @@ public class Partida2 extends HttpServlet {
 		int dni2=Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
+		int idp = Integer.parseInt(request.getParameter("idpartida"));
+		cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idp);
 		Partida p = new Partida();
-		p = request.getParameter("p");
-		int idpart = p.getid();
-		cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idpart);
+		p = cl.buscapartidaunica(idp);
 		
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);

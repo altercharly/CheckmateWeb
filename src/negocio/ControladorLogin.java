@@ -232,5 +232,20 @@ public class ControladorLogin {
 		}
 		return puede;
 	}
+	
+	public ArrayList<Partida> buscarpartida(int dni1){
+		ArrayList<Partida> p = new ArrayList<Partida> ();
+		p =	cpa.buscarpartida(dni1);
+		
+		return p;
+		
+		
+	}
+	
+	public Partida buscapartidaunica(int idpart){
+		Partida p = new Partida();
+		p=cpa.buscarpartidaunica(idpart);
+		return p;
+	}
 
 }
