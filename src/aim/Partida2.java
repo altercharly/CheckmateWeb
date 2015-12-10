@@ -18,13 +18,13 @@ import negocio.ControladorLogin;
  * 
  */
 @WebServlet("/Redirected2")
-public class Redirected2 extends HttpServlet {
+public class Partida2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
     /**
      * Default constructor. 
      */
-    public Redirected2() {
+    public Partida2() {
         // TODO Auto-generated constructor stub
     }
 
@@ -44,20 +44,25 @@ public class Redirected2 extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario jug1 = (Usuario) session.getAttribute("user");
 		String dni=request.getParameter("dnicont");
+		char pieza = ((request.getAttribute("nombreficha")).toLowerCase().charAt(0));
+		char posix = ((request.getAttribute("posx")).toLowerCase().charAt(0));
+		char nposix = ((request.getAttribute("newposx")).toLowerCase().charAt(0));
+		int posiy = Integer.parseInt(request.getAttribute("posy"));
+		int nposiy = Integer.parseInt(request.getAttribute("newposy"));
 		//response.getWriter().append(email).append(": ").append(pass);
 		int dni2=Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
 		Partida p = new Partida();
-		cl.nuevapartida(jug1, jug2);
+		p = request.getAttribute("p");
+		int idpart = p.getid();
+		cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idpart);
 		
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
 			response.sendRedirect("Partida.jsp");
-
-			
 		
 	}
-
+	
 }

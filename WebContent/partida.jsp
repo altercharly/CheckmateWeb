@@ -44,7 +44,7 @@
 </td>
 </tr>
 <div>
-<form class="form-partida" name="partida" action="<%//debería enviar los datos para efectuar la jugada %>" method="post" >
+<form class="form-partida" name="partida" action="Partida2.java" method="post" >
 	<table aligne="center">
 	<br>
 	<tr>

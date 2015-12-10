@@ -48,6 +48,8 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 	<% } %>
 	<% } %>
 	</select>
+	<br>
+	<<input type="submit" value="CargarPartida">
 	<% if (p == null) { %>
 	<p aligne="center" color="red"> No tiene partidas en curso </p>
 	<% } %>
