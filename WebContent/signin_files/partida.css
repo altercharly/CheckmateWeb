@@ -1,0 +1,41 @@
+@CHARSET "ISO-8859-1";
+body {
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #eee;
+}
+
+.form-partida {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-partida .form-partida-heading,
+.form-partida .checkbox {
+  margin-bottom: 10px;
+}
+.form-partida .checkbox {
+  font-weight: normal;
+}
+.form-partida .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-partida .form-control:focus {
+  z-index: 2;
+}
+.form-partida input[type="dni"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="jugadorActivo"] {
+  margin-bottom: 30px;
+  border-top-left-radius: 30;
+  border-top-right-radius: 30;
+}
