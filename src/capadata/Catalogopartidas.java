@@ -17,6 +17,7 @@ public class Catalogopartidas {
 	
 	
 
+	@SuppressWarnings("null")
 	public 	ArrayList<Partida> buscarpartida(int dni1){
 		ArrayList<Partida> p = new ArrayList<Partida>();
 		p=null;
