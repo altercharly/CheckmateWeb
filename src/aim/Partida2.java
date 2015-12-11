@@ -56,7 +56,7 @@ public class Partida2 extends HttpServlet {
 		int idp = Integer.parseInt(request.getParameter("idpartida"));
 		cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idp);
 		Partida p = new Partida();
-		p = cl.buscapartidaunica(idp);
+		
 		
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);

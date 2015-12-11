@@ -142,43 +142,4 @@ public void actualizarPartida(Partida partida)
 }
 
 
-public Partida buscarpartidaunica(int idpart) {
-	// TODO Auto-generated method stub
-	ResultSet rs=null;
-	PreparedStatement stmt=null;
-	Partida p = null;
-			
-	try {
-		stmt = FactoryConexion.getInstancia().getConn().prepareStatement(
-				"select partidas where idpartida = ?");
-		stmt.setInt(1, idpart);
-		
-		stmt.executeQuery();
-		if(rs !=null && rs.next()){
-			p =new Partida();
-			p.setid(rs.getInt("idpartida"));
-			p.setestado(rs.getBoolean("estado"));  
-			p.setjugact(rs.getInt("turno"));
-		}
-				
-	} catch (SQLException e) {
-		// TODO Auto-generated catch block
-		e.printStackTrace();
-	}
-	finally{
-		
-		try {
-			if(rs!=null ) rs.close();
-			if(stmt != null) stmt.close();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-			}
-		
-		FactoryConexion.getInstancia().releaseConn();
-		}
-
-	return p;
-	}
 }
-

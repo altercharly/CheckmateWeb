@@ -242,10 +242,5 @@ public class ControladorLogin {
 		
 	}
 	
-	public Partida buscapartidaunica(int idpart){
-		Partida p = new Partida();
-		p=cpa.buscarpartidaunica(idpart);
-		return p;
-	}
 
 }

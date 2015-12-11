@@ -170,5 +170,9 @@ public class Partida {
 		
 	}
 	
+	public void setjugadores(Usuario jug1, Usuario jug2){
+		this.jugador1 = jug1;
+		this.jugador2 = jug2;
+	}
 	
 }
