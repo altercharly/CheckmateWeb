@@ -49,9 +49,9 @@ public class Redirected2 extends HttpServlet {
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
 		Partida p = new Partida();
-		cl.nuevapartida(jug1, jug2);
+		p = cl.nuevapartida(jug1, jug2);
 		p = cl.guardarpartida(p);
-		
+				
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);

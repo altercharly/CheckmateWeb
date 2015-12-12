@@ -38,10 +38,10 @@ public class ControladorLogin {
 		return usu;
 	}
 	
-	public void nuevapartida(Usuario jug1,Usuario jug2){
+	public Partida nuevapartida(Usuario jug1,Usuario jug2){
 		Partida partn = new Partida();
 		partn.iniciarpartida(jug1, jug2);
-		
+		return partn;
 	}
 
 	public Usuario getUsuarioByDni(int dni2) {
