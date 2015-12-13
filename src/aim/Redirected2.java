@@ -55,10 +55,9 @@ public class Redirected2 extends HttpServlet {
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
-			response.sendRedirect("Partida.jsp");
+			response.sendRedirect("partida.jsp");
 
-			
-		
+				
 	}
 
 }
