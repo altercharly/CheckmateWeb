@@ -14,9 +14,12 @@
 <form class="form-mensaje" action="Partida2.java" method="post">
 <% boolean resp = (boolean)request.getAttribute("valido"); %>
 <%if(true == resp){%>
-	<%//completar con la muestra si el movimiento fue valido y generar un bton para volver a la "partida.java"%>
+	<p aligne="center" style="font-weight:bold"> El movimiento fue valido y guardado. </p>
 <%}%>
-
+<%if(false == resp){ %>
+	<p aligne="center" style="font-weight:bold"> El movimiento fue invalido, vuelva a intentarlo. </p>
+	<input type="submit" value="Volver" aligne="center">
+<%} %>
 </form>
 </body>
 </html>
