@@ -31,31 +31,6 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 	</form>
 </div>
 		
-<div style="margin: auto">
-	<% ArrayList<Partida> p = new ArrayList<Partida>(); %>
-	<% //p =cont.buscarpartida(dni1);  
-	//cambiar por el request necesario %>
-	 <label for="Dni Contrincante" class="sr-only">dniContrincante</label>
-        <input name="dni2" id="dni2" class="form-control" placeholder="Dni Contrincante" required="" type="text">
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Buscar</button>
-	<p aligne="center" color="blue"> Partidas en curso: </p>
-	<form class="form-redirect" name="redirectpart" action="<%//debería llamar a partida.jsp si no estoy mal %>" method="post">
-	<table aligne="center">
-	<select name="partidas">
-	<% if (p!=null){ %>
-	<% for(int i = 0; i < p.size() + 1; i++) { %>
-	<option value="<%= p.get(i) %>"></option>
-	<% } %>
-	<% } %>
-	</select>
-	<br>
-	<<input type="submit" value="CargarPartida">
-	<% if (p == null) { %>
-	<p aligne="center" color="red"> No tiene partidas en curso </p>
-	<% } %>
-	</table>
-	</form>
-</div>	
 
 </body>
 </html>

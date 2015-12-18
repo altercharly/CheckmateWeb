@@ -17,7 +17,7 @@ import negocio.ControladorLogin;
  * Servlet implementation class Redirected2
  * 
  */
-@WebServlet("/Redirected2")
+@WebServlet("/Partida2")
 public class Partida2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -62,7 +62,7 @@ public class Partida2 extends HttpServlet {
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
 			session.setAttribute("valido",resp);
-			response.sendRedirect("/mensaje.jsp");
+			response.sendRedirect("mensaje.jsp");
 		
 	}
 	
