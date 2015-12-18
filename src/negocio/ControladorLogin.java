@@ -52,6 +52,7 @@ public class ControladorLogin {
 	
 	public Partida guardarpartida(Partida p){
 		Partida par = new Partida();
+		par = cpa.guardarPartida(p);
 		return par;
 	}
 	
