@@ -17,7 +17,7 @@ import negocio.ControladorLogin;
  * Servlet implementation class Redirected2
  * 
  */
-@WebServlet("/Partida2")
+@WebServlet("/partida")
 public class Partida2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

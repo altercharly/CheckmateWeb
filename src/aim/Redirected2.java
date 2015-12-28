@@ -17,7 +17,7 @@ import negocio.ControladorLogin;
  * Servlet implementation class Redirected2
  * 
  */
-@WebServlet("/Redirected2")
+@WebServlet("/redirected2")
 public class Redirected2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -49,13 +49,14 @@ public class Redirected2 extends HttpServlet {
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
 		Partida p = new Partida();
+		
 		p = cl.nuevapartida(jug1, jug2);
 		p = cl.guardarpartida(p);
 				
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
-			response.sendRedirect("partida.jsp");
+			response.sendRedirect("/ChekmateWeb/partida.jsp");
 
 				
 	}

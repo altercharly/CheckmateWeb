@@ -19,17 +19,19 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 <h1 aligne="center" style="font-weight:bold"> Usuario: <%=u.getNombre()%></h1> 
 
 <div>
-	<form class="form-redirect" name="redirect" action="/redirected2.java" method="post" >
+	<form class="form-redirect" name="redirect" action="redirected2.java" method="post" >
 	<table aligne="center">
 	<br>
 	<tr>
 	<td aligne="right"> dni del contrincante: </td>
 	<td><input type="text" name="dnicont" id="dnicont"></td>
 	</tr>
+	
 	<tr><input type="submit" value="nueva partida"></tr>
 	</table>
 	</form>
 </div>
 		
+
 </body>
 </html>
