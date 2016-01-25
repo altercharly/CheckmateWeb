@@ -13,61 +13,59 @@
 <body>
 <% Usuario u = (Usuario)request.getAttribute("user");
  Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
- <% Usuario cont = (Usuario)request.getAttribute("jug2"); %>
+<% Usuario cont = (Usuario)request.getAttribute("jug2"); %>
 <% Partida p = (Partida)request.getAttribute("partida"); %>
-<h1 aligne="center" style="font-weight:bold"> IdPartida: <%=p.getid()%></h1> 
-<form class="form-partida" name="partida" action="" method="get">
+<h1 aligne="center" style="font-weight:bold"> IdPartida: <% Integer.toString(p.getid()); %></h1> 
 <p aligne="center" color="red"> Turno jugador: <%cont.getApellido() ; %> <%cont.getNombre() ; %></p>
 <tr>
 <p aligne="center"> Tablero: </p>
 <td>
 <ul>
-	<p aligne="left"> J1: <% u.getApellido(); %> <%u.getNombre();%></p>
-	<% u = p.getjugador(1);
-	ArrayList<Pieza> piezas = u.getpiezas();
-	for (int i = 0; i < piezas.size(); i++) {
-		if ((piezas.get(i)).getestado() == 1) {%>
-			<li><%(piezas.get(i)).getname();%> ("<%(piezas.get(i)).getposx();%> ,<%(piezas.get(i)).getposy();%> )</li>   
+<p aligne="left"> J1: <% u.getApellido(); %> <%u.getNombre();%></p>
+<% u = p.getjugador(1);
+ArrayList<Pieza> piezas = u.getpiezas();
+for (int i = 0; i < piezas.size(); i++) {
+	if ((piezas.get(i)).getestado() == 1) {%>
+		<li><%(piezas.get(i)).getname();%> ("<%(piezas.get(i)).getposx();%> ,<%(piezas.get(i)).getposy();%> )</li>   
 		<%}
 	}%> 
 </ul>
 </td>
 <td>
-	<p aligne="rigth"> J2: <% cont.getApellido(); %> <%cont.getNombre();%></p>
-	<% cont = p.getjugador(2);
-	ArrayList<Pieza> piezas2 = u.getpiezas();
-	for (int i = 0; i < piezas2.size(); i++) {
-		if ((piezas2.get(i)).getestado() == 1) {%>
-			<li><%(piezas2.get(i)).getname();%> ("<%(piezas2.get(i)).getposx();%> ,<%(piezas2.get(i)).getposy();%> )</li>   
+<p aligne="rigth"> J2: <% cont.getApellido(); %> <%cont.getNombre();%></p>
+<% cont = p.getjugador(2);
+ArrayList<Pieza> piezas2 = u.getpiezas();
+for (int i = 0; i < piezas2.size(); i++) {
+	if ((piezas2.get(i)).getestado() == 1) {%>
+		<li><%(piezas2.get(i)).getname();%> ("<%(piezas2.get(i)).getposx();%> ,<%(piezas2.get(i)).getposy();%> )</li>   
 		<%}
 	}%>
 </td>
 </tr>
 <div>
-<form class="form-partida" name="partida" action="Partida2.java" method="post" >
+<form class="form-partida" name="partida" action="Partidaservlet.java" method="post" >
 	<table aligne="center">
 	<br>
 	<tr>
 	<p> Realizar movimiento </p>
 	<% if(p.getjugact() == 1){ %>
-		<td aligne="right"> Ficha(letra inicial): </td>
-		<td><input type="text" name="nombreficha" id="nombreficha"></td>
-		<td aligne="right"> Posición X: </td>
-		<td><input type="text" name="posx" id="posx"></td>
-		<td aligne="right"> Posición Y: </td>
-		<td><input type="text" name="posy" id="posy"></td>
-		<br>
-		<td aligne="right"> Nueva posición X: </td>
-		<td><input type="text" name="newposx" id="newposx"></td>
-		<td aligne="right"> Nueva posición Y: </td>
-		<td><input type="text" name="newposy" id="newposy"></td>
-		<td><input type="submit" value="Realizar jugada" aligne="center"></td>
+	<td aligne="right"> Ficha(letra inicial): </td>
+	<td><input type="text" name="nombreficha" id="nombreficha"></td>
+	<td aligne="right"> Posición X: </td>
+	<td><input type="text" name="posx" id="posx"></td>
+	<td aligne="right"> Posición Y: </td>
+	<td><input type="text" name="posy" id="posy"></td>
+	<br>
+	<td aligne="right"> Nueva posición X: </td>
+	<td><input type="text" name="newposx" id="newposx"></td>
+	<td aligne="right"> Nueva posición Y: </td>
+	<td><input type="text" name="newposy" id="newposy"></td>
+	<td><input type="submit" value="Realizar jugada" aligne="center"></td>
 	</tr>
 	</table>
 </form>
 <% };%>
 </div>	
-</form>
 
 </body>
 </html>

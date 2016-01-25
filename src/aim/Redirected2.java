@@ -17,7 +17,7 @@ import negocio.ControladorLogin;
  * Servlet implementation class Redirected2
  * 
  */
-@WebServlet("/redirected2")
+@WebServlet("/Redirected2servlet")
 public class Redirected2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -41,23 +41,24 @@ public class Redirected2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(false);
 		Usuario jug1 = (Usuario) session.getAttribute("user");
-		String dni=request.getParameter("dnicont");
+		String dni = request.getParameter("dnicont");
 		//response.getWriter().append(email).append(": ").append(pass);
-		int dni2=Integer.parseInt(dni);
+		int dni2 = Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
+		System.out.println(jug2.getApellido());
 		Partida p = new Partida();
-		
 		p = cl.nuevapartida(jug1, jug2);
-		p = cl.guardarpartida(p);
-				
+		p = cl.guardarpartida(p); 
+		System.out.println(p.getid());
+		if(jug2 != null){		
 			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
-			response.sendRedirect("/ChekmateWeb/partida.jsp");
-
+			response.sendRedirect("partida.jsp");
+		} 
 				
 	}
 

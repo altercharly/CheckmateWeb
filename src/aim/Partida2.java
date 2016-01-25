@@ -17,7 +17,7 @@ import negocio.ControladorLogin;
  * Servlet implementation class Redirected2
  * 
  */
-@WebServlet("/partida")
+@WebServlet("/Partidaservlet")
 public class Partida2 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -58,7 +58,7 @@ public class Partida2 extends HttpServlet {
 		int idp = Integer.parseInt(request.getParameter("idpartida"));
 		resp=cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idp);
 		
-		session.setAttribute("user", jug1);
+			session.setAttribute("user", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
 			session.setAttribute("valido",resp);

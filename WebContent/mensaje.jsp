@@ -11,7 +11,7 @@
 <title>.:Mensaje:.</title>
 </head>
 <body>
-<form class="form-mensaje" action="Partida2.java" method="post">
+<form class="form-mensaje" action="Partidaservlet.java" method="post">
 <% boolean resp = (boolean)request.getAttribute("valido"); %>
 <%if(true == resp){%>
 	<p aligne="center" style="font-weight:bold"> El movimiento fue valido y guardado. </p>

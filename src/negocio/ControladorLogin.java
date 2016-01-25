@@ -40,7 +40,6 @@ public class ControladorLogin {
 	
 	public Partida nuevapartida(Usuario jug1,Usuario jug2){
 		Partida partn = new Partida();
-		
 		partn.iniciarpartida(jug1, jug2);
 		return partn;
 	}
@@ -52,7 +51,8 @@ public class ControladorLogin {
 	}
 	
 	public Partida guardarpartida(Partida p){
-	Partida par =cpa.guardarPartida(p);
+		Partida par = new Partida();
+		par = cpa.guardarPartida(p);
 		return par;
 	}
 	
