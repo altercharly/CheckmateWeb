@@ -40,14 +40,13 @@ public class Login2 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		//doGet(request, response);
+		//response.getWriter().append(email).append(": ").append(pass);
+		negocio.ControladorLogin cl= new ControladorLogin();
 		String email=request.getParameter("email");
 		String pass=request.getParameter("pass");
-		//response.getWriter().append(email).append(": ").append(pass);
-		
-		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario u = cl.getUsuarioByEmailAndPassword(email, pass);
 		if (u != null){
-			request.setAttribute("user", u);
+			
 			HttpSession session = request.getSession(true);
 			session.setAttribute("userSession", u);
 			request.getRequestDispatcher("redirected2.jsp").forward(request, response);

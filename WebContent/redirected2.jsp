@@ -12,12 +12,8 @@
 <title>.:Usuario:.</title>
 </head>
 <body>
-
-<% Usuario u = (Usuario)request.getAttribute("user");
-//aquí leo los demás params 
-Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
-<h1 aligne="center" style="font-weight:bold"> Usuario: <%=u.getNombre()%></h1> 
-
+<% Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
+<h1 aligne="center" style="font-weight:bold"> Usuario: <%=usuarioSession.getNombre()%></h1> 
 <div>
 	<form class="form-redirected2" name="redirected2" action="Redirected2.java" method="post" >
 	<table aligne="center">
@@ -30,6 +26,5 @@ Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 	</table>
 	</form>
 </div>
-		
 </body>
 </html>
