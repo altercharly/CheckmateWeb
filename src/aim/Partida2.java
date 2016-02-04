@@ -42,7 +42,7 @@ public class Partida2 extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		HttpSession session = request.getSession();
-		Usuario jug1 = (Usuario) session.getAttribute("user");
+		Usuario jug1 = (Usuario) session.getAttribute("userSession");
 		Partida p = (Partida) session.getAttribute("partida");
 		String dni=request.getParameter("dnicont");
 		char pieza = ((request.getParameter("nombreficha")).toLowerCase().charAt(0));
@@ -55,10 +55,10 @@ public class Partida2 extends HttpServlet {
 		int dni2=Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
-		int idp = Integer.parseInt(request.getParameter("idpartida"));
+		int idp =p.getid();
 		resp=cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idp);
 		
-			session.setAttribute("user", jug1);
+			session.setAttribute("userSession", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
 			session.setAttribute("valido",resp);

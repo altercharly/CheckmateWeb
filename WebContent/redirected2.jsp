@@ -15,7 +15,7 @@
 <% Usuario usuarioSession = (Usuario)session.getAttribute("userSession");%>
 <h1 aligne="center" style="font-weight:bold"> Usuario: <%=usuarioSession.getNombre()%></h1> 
 <div>
-	<form class="form-redirected2" name="redirected2" action="Redirected2.java" method="post" >
+	<form class="form-redirected2" name="redirected2" action="Redirected2servlet" method="post" >
 	<table aligne="center">
 	<br>
 	<tr>

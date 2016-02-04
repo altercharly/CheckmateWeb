@@ -41,23 +41,31 @@ public class Redirected2 extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		HttpSession session = request.getSession(false);
-		Usuario jug1 = (Usuario) session.getAttribute("user");
+		HttpSession session = request.getSession();
+		Usuario jug1 = (Usuario) session.getAttribute("userSession");
 		String dni = request.getParameter("dnicont");
 		//response.getWriter().append(email).append(": ").append(pass);
 		int dni2 = Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
+		if (jug1 != null)
+		{
+		System.out.println(jug1.getApellido());}
+		else {
+			System.out.println("No encontrado");
+		}
+		
 		System.out.println(jug2.getApellido());
 		Partida p = new Partida();
 		p = cl.nuevapartida(jug1, jug2);
 		p = cl.guardarpartida(p); 
 		System.out.println(p.getid());
 		if(jug2 != null){		
-			session.setAttribute("user", jug1);
+			session.setAttribute("userSession", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
 			response.sendRedirect("partida.jsp");
+			
 		} 
 				
 	}
