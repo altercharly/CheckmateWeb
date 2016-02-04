@@ -15,7 +15,7 @@
  %>
 <% Usuario cont = (Usuario)session.getAttribute("jug2"); %>
 <% Partida p = (Partida)session.getAttribute("partida"); %>
-<h1 aligne="center" style="font-weight:bold"> IdPartida: <%= p.getid() %></h1> 
+<h1 aligne="center" style="font-weight:bold"> IdPartida: <%=p.getid() %></h1> 
 <p aligne="center" color="red"> Turno jugador: <%cont.getApellido() ; %> <%cont.getNombre() ; %></p>
 <tr>
 <p aligne="center"> Tablero: </p>
@@ -24,20 +24,21 @@
 <p aligne="left"> J1: <%= u.getApellido() %> <%= u.getNombre() %></p>
 <% u = p.getjugador(1);
 ArrayList<Pieza> piezas = u.getpiezas();
+
 for (int i = 0; i < piezas.size(); i++) {
 	if ((piezas.get(i)).getestado() == 1) {%>
-		<li><%= (piezas.get(i)).getname()%> ("<%= (piezas.get(i)).getposx()%> ,<%= (piezas.get(i)).getposy()%> )</li>   
+		<li><%=(piezas.get(i)).getname()%> ("<%=(piezas.get(i)).getposx()%> ,<%=(piezas.get(i)).getposy()%> )</li>   
 		<%}
 	}%> 
 </ul>
 </td>
 <td>
-<p aligne="rigth"> J2: <%= cont.getApellido() %> <%= cont.getNombre()%></p>
+<p aligne="rigth"> J2: <%=cont.getApellido() %> <%=cont.getNombre()%></p>
 <% cont = p.getjugador(2);
 ArrayList<Pieza> piezas2 = u.getpiezas();
 for (int i = 0; i < piezas2.size(); i++) {
 	if ((piezas2.get(i)).getestado() == 1) {%>
-		<li><%= (piezas2.get(i)).getname()%> ("<%= (piezas2.get(i)).getposx()%> ,<%= (piezas2.get(i)).getposy()%> )</li>   
+		<li><%=(piezas2.get(i)).getname()%> ("<%=(piezas2.get(i)).getposx()%> ,<%=(piezas2.get(i)).getposy()%> )</li>   
 		<%}
 	}%>
 </td>

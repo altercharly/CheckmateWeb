@@ -57,7 +57,7 @@ public class Partida2 extends HttpServlet {
 		Usuario jug2 = cl.getUsuarioByDni(dni2);
 		int idp =p.getid();
 		resp=cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idp);
-		
+		System.out.println(p.getjugador(0).getpiezas().size());
 			session.setAttribute("userSession", jug1);
 			session.setAttribute("jug2", jug2);
 			session.setAttribute("partida", p);
