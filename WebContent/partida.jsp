@@ -24,7 +24,6 @@
 <p aligne="left"> J1: <%= u.getApellido() %> <%= u.getNombre() %></p>
 <% u = p.getjugador(1);
 ArrayList<Pieza> piezas = u.getpiezas();
-
 for (int i = 0; i < piezas.size(); i++) {
 	if ((piezas.get(i)).getestado() == 1) {%>
 		<li><%=(piezas.get(i)).getname()%> ("<%=(piezas.get(i)).getposx()%> ,<%=(piezas.get(i)).getposy()%> )</li>   
