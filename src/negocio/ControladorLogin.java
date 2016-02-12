@@ -56,7 +56,6 @@ public class ControladorLogin {
 		pieza2 = jug2.getpiezas(); 
 		idpart = partn.getid();
 		cp.guardarpieza(pieza1, pieza2, id1, id2, idpart);
-		
 		return partn;
 	}
 
@@ -114,7 +113,7 @@ public class ControladorLogin {
 									alf.setposx(nposix);
 									alf.setposy(nposiy);
 									pieza1.set(i,alf);
-									cp.guardarpieza(pieza1,pieza2, id1, id2,idpart);
+									cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
 									message = "Movimiento exitoso";
 									JOptionPane.showMessageDialog(null, message);
 									puede = true;
@@ -137,7 +136,7 @@ public class ControladorLogin {
 									cab.setposx(nposix);
 									cab.setposy(nposiy);
 									pieza1.set(i,cab);
-									cp.guardarpieza(pieza1,pieza2,id1, id2,idpart);
+									cp.actualizarpieza(pieza1,pieza2,id1, id2,idpart);
 									message = "Movimiento exitoso";
 									JOptionPane.showMessageDialog(null, message);
 									puede = true;
@@ -160,7 +159,7 @@ public class ControladorLogin {
 									reina.setposx(nposix);
 									reina.setposy(nposiy);
 									pieza1.set(i,reina);
-									cp.guardarpieza(pieza1,pieza2,id1,id2,idpart);
+									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
 									message = "Movimiento exitoso";
 									JOptionPane.showMessageDialog(null, message);
 									puede = true;
@@ -183,7 +182,7 @@ public class ControladorLogin {
 									rey.setposx(nposix);
 									rey.setposy(nposiy);
 									pieza1.set(i,rey);
-									cp.guardarpieza(pieza1,pieza2,id1,id2,idpart);
+									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
 									message = "Movimiento exitoso";
 									JOptionPane.showMessageDialog(null, message);
 									puede = true;
@@ -206,7 +205,7 @@ public class ControladorLogin {
 									torr.setposx(nposix);
 									torr.setposy(nposiy);
 									pieza1.set(i,torr);
-									cp.guardarpieza(pieza1,pieza2,id1,id2,idpart);
+									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
 									message = "Movimiento exitoso";
 									JOptionPane.showMessageDialog(null, message);
 									puede = true;
@@ -235,7 +234,7 @@ public class ControladorLogin {
 									peon.setposx(nposix);
 									peon.setposy(nposiy);
 									pieza1.set(i,peon);
-									cp.guardarpieza(pieza1,pieza2,id1,id2,idpart);
+									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
 									message = "Movimiento exitoso";
 									JOptionPane.showMessageDialog(null, message);
 									puede = true;
