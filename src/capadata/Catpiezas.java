@@ -48,16 +48,15 @@ public class Catpiezas {
 			estado = pieza1.get(i).getestado();
 			
 			//falta terminar de corregir la consulta
-			sql = "INSERT `ajedrez`.`piezas` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
+			sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
 			try {
-				sentencia = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				sentencia.setInt(1,nombre);
-				sentencia.setInt(2, posx);
-				sentencia.setInt(3,posy);
-				sentencia.setInt(4, color);
+				sentencia.setInt(2, color);
+				sentencia.setInt(3, posx);
+				sentencia.setInt(4,posy);
 				sentencia.setInt(5, estado);
-				sentencia.setInt(6, id1);
-				sentencia.setInt(7, idpart);
+				sentencia.setInt(6, idpart);
+				sentencia.setInt(7, id1);
 				sentencia.executeUpdate();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -71,16 +70,15 @@ public class Catpiezas {
 			estado = pieza2.get(j).getestado();
 				
 												
-			sql = "UPDATE `ajedrez`.`piezas` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
+			sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
 			try {
-				sentencia = (PreparedStatement) con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				sentencia.setInt(1,nombre);
-				sentencia.setInt(2, posx);
-				sentencia.setInt(3,posy);
-				sentencia.setInt(4, color);
+				sentencia.setInt(2, color);
+				sentencia.setInt(3, posx);
+				sentencia.setInt(4,posy);
 				sentencia.setInt(5, estado);
-				sentencia.setInt(6, id2);
-				sentencia.setInt(7, idpart);
+				sentencia.setInt(6, idpart);
+				sentencia.setInt(7, id1);
 				sentencia.executeUpdate();
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
@@ -116,7 +114,7 @@ public class Catpiezas {
 			estado = pieza1.get(i).getestado();
 			
 			//falta corregir la consulta
-			sql = "UPDATE `ajedrez`.`piezas` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
+			sql = "UPDATE `pieza` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
 			try {
 				sentencia = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				sentencia.setInt(1,nombre);
@@ -139,7 +137,7 @@ public class Catpiezas {
 			estado = pieza2.get(j).getestado();
 				
 												
-			sql = "UPDATE `ajedrez`.`piezas` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
+			sql = "UPDATE `pieza` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
 			try {
 				sentencia = (PreparedStatement) con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				sentencia.setInt(1,nombre);

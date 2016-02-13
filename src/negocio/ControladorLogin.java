@@ -45,15 +45,15 @@ public class ControladorLogin {
 		// recorro cada conjunto de piezas y las guardo en la DB
 		int id1,id2,idpart;
 		Usuario ju1 = new Usuario();
-		jug1 = partn.getjugador(1);
+		ju1 = partn.getjugador(1);
 		ArrayList<Pieza> pieza1 = new ArrayList<Pieza>();
-		id1 = jug1.getId();
-		pieza1 = jug1.getpiezas(); 
+		id1 = ju1.getId();
+		pieza1 = ju1.getpiezas(); 
 		Usuario ju2 = new Usuario();
-		jug2 = partn.getjugador(2);
+		ju2 = partn.getjugador(2);
 		ArrayList<Pieza> pieza2 = new ArrayList<Pieza>();
-		id2 = jug2.getId();
-		pieza2 = jug2.getpiezas(); 
+		id2 = ju2.getId();
+		pieza2 = ju2.getpiezas(); 
 		idpart = partn.getid();
 		cp.guardarpieza(pieza1, pieza2, id1, id2, idpart);
 		return partn;
