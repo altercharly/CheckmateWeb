@@ -24,7 +24,7 @@
 <p aligne="left"> J1: <%= u.getApellido() %> <%= u.getNombre() %></p>
 <% u = p.getjugador(1);
 ArrayList<Pieza> piezas = u.getpiezas();
-for (int i = 0; i < piezas.size(); i++) {
+for (int i = 0; i < 16; i++) {
 	if ((piezas.get(i)).getestado() == 1) {%>
 		<li><%=(piezas.get(i)).getname()%> ("<%=(piezas.get(i)).getposx()%> ,<%=(piezas.get(i)).getposy()%> )</li>   
 		<%}
@@ -35,7 +35,7 @@ for (int i = 0; i < piezas.size(); i++) {
 <p aligne="rigth"> J2: <%=cont.getApellido() %> <%=cont.getNombre()%></p>
 <% cont = p.getjugador(2);
 ArrayList<Pieza> piezas2 = u.getpiezas();
-for (int i = 0; i < piezas2.size(); i++) {
+for (int i = 0; i < 16; i++) {
 	if ((piezas2.get(i)).getestado() == 1) {%>
 		<li><%=(piezas2.get(i)).getname()%> ("<%=(piezas2.get(i)).getposx()%> ,<%=(piezas2.get(i)).getposy()%> )</li>   
 		<%}
