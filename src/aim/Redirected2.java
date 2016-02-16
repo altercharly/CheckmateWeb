@@ -58,7 +58,6 @@ public class Redirected2 extends HttpServlet {
 		System.out.println(jug2.getApellido());
 		Partida p = new Partida();
 		p = cl.nuevapartida(jug1, jug2);
-		p = cl.guardarpartida(p); 
 		System.out.println(p.getid());
 		if(jug2 != null){		
 			session.setAttribute("userSession", jug1);
