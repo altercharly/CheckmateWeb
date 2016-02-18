@@ -5,9 +5,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-
-
 import java.util.ArrayList;
+
+
 
 
 
@@ -35,7 +35,8 @@ public class Catpiezas {
 		char posx;
 		char color;
 		int estado;
-		String sql;
+		//String sql;
+		
 		
 		PreparedStatement sentencia=null;
 		Connection con = FactoryConexion.getInstancia().getConn();
@@ -48,9 +49,13 @@ public class Catpiezas {
 			estado = pieza1.get(i).getestado();
 			
 			//falta terminar de corregir la consulta
-			sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
+			//sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
+			
 			try {
-				sentencia.setInt(1,nombre);
+			sentencia= FactoryConexion.getInstancia().getConn().prepareStatement(
+			"insert into pieza (nombre,color,posx,posy,estado,idpart,id1) values (?,?,?,?,?,?,?)");
+		
+				sentencia.setInt(1, nombre);
 				sentencia.setInt(2, color);
 				sentencia.setInt(3, posx);
 				sentencia.setInt(4,posy);
@@ -69,9 +74,10 @@ public class Catpiezas {
 			color = pieza2.get(j).getcolor();
 			estado = pieza2.get(j).getestado();
 				
-												
-			sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
-			try {
+			try {									
+			//sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
+			sentencia= FactoryConexion.getInstancia().getConn().prepareStatement("insert into pieza (nombre,color,posx,posy,estado,idpart,id1) values (?,?,?,?,?,?,?)");
+			
 				sentencia.setInt(1,nombre);
 				sentencia.setInt(2, color);
 				sentencia.setInt(3, posx);
@@ -112,10 +118,11 @@ public class Catpiezas {
 			posy = pieza1.get(i).getposy();
 			color = pieza1.get(i).getcolor();
 			estado = pieza1.get(i).getestado();
-			
-			//falta corregir la consulta
-			sql = "UPDATE `pieza` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
 			try {
+			//falta corregir la consulta
+			sql = "UPDATE pieza SET nombre = ?, posx = ?, posy = ?, color= ?, estado = ? WHERE id = ? AND idpartida = ?";
+			
+			
 				sentencia = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 				sentencia.setInt(1,nombre);
 				sentencia.setInt(2, posx);
