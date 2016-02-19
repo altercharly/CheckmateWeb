@@ -135,9 +135,7 @@ public Usuario buscarusuario(String email, String pass){
 	
 	public String deleteUsuario(int dni){
 		String message = "Usuario no encontrado";
-		ResultSet rs=null;
 		PreparedStatement stmt=null;
-		Usuario u=null;
 		try {
 			stmt = 	FactoryConexion.getInstancia().getConn().prepareStatement(
 					"DELETE from usuario where dni = ?"

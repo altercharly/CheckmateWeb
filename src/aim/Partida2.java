@@ -44,7 +44,7 @@ public class Partida2 extends HttpServlet {
 		HttpSession session = request.getSession();
 		Usuario jug1 = (Usuario) session.getAttribute("userSession");
 		Partida p = (Partida) session.getAttribute("partida");
-		String dni=request.getParameter("dnicont");
+		Usuario jug2= (Usuario) session.getAttribute("jug2");
 		char pieza = ((request.getParameter("nombreficha")).toLowerCase().charAt(0));
 		char posix = ((request.getParameter("posx")).toLowerCase().charAt(0));
 		char nposix = ((request.getParameter("newposx")).toLowerCase().charAt(0));
@@ -52,9 +52,7 @@ public class Partida2 extends HttpServlet {
 		int nposiy = Integer.parseInt(request.getParameter("newposy"));
 		boolean resp;
 		//response.getWriter().append(email).append(": ").append(pass);
-		int dni2=Integer.parseInt(dni);
 		negocio.ControladorLogin cl= new ControladorLogin();
-		Usuario jug2 = cl.getUsuarioByDni(dni2);
 		int idp =p.getid();
 		resp=cl.movimientovalido(pieza, posix, posiy, nposix, nposiy, jug1, jug2, idp);
 		System.out.println(idp);
