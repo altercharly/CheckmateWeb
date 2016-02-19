@@ -67,7 +67,7 @@ public class Catpiezas {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		for (int j = 0; i < 16; i++) {
+		for (int j = 0; j < 16; j++) {
 			nombre = pieza2.get(j).getname();
 			posx = pieza2.get(j).getposx();
 			posy = pieza2.get(j).getposy();
