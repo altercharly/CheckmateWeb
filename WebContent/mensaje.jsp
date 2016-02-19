@@ -26,7 +26,7 @@
     <![endif]-->
 </head>
 <body>
-<form class="form-mensaje" action="Partida2.java" method="post">
+<form class="form-mensaje" action="partida.jsp" method="post">
 <% boolean resp = (Boolean) session.getAttribute("valido"); %>
 <%if(true == resp){%>
 	<p aligne="center" style="font-weight:bold"> El movimiento fue valido y guardado. </p>

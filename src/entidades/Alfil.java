@@ -21,7 +21,7 @@ public class Alfil extends Pieza {
 		resultado = false;
 		xpos= this.getposx();
 		ypos= this.getposy();
-		for(int i=0; i < 3; i++){
+		for(int i=0; i < 4; i++){
 			switch(i){
 				case 0:
 					for (int j = 0; j < 7; j++) {

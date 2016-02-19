@@ -20,7 +20,7 @@ public class Caballo extends Pieza {
 		resultado = false;
 		xpos= this.getposx();
 		ypos= this.getposy();
-		for(int i=0; i < 3; i++){
+		for(int i=0; i < 4; i++){
 			switch(i){
 				case 0:
 					if(x == this.getposx() +2){

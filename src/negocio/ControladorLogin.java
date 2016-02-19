@@ -96,8 +96,8 @@ public class ControladorLogin {
 			posx = pieza1.get(i).getposx();
 			posy = pieza1.get(i).getposy();
 			if((nombre == pieza)&&(posiy == posy)&&(posix==posx)){
-				for(int j=0; j < 6; i++){
-					switch(i){
+				for(int j=0; j < 6; j++){
+					switch(j){
 						case 0:
 							if ( 'a' == nombre){
 								color = pieza1.get(i).getcolor();
@@ -110,13 +110,17 @@ public class ControladorLogin {
 											pieza2.get(k).setestado(0);
 										}
 									}
-									alf.setposx(nposix);
-									alf.setposy(nposiy);
-									pieza1.set(i,alf);
-									cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
-									message = "Movimiento exitoso";
-									JOptionPane.showMessageDialog(null, message);
-									puede = true;
+									for (int t = 0; t < 16; t++) {
+										if(( nposix == pieza1.get(t).getposx())&&(nposiy == pieza1.get(t).getposy())&&(1 == pieza1.get(t).getestado())){
+										alf.setposx(nposix);
+										alf.setposy(nposiy);
+										pieza1.set(i,alf);
+										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
+										message = "Movimiento exitoso";
+										JOptionPane.showMessageDialog(null, message);
+										puede = true;
+										}
+									}
 								}
 								return puede ;
 							}
@@ -133,13 +137,18 @@ public class ControladorLogin {
 											pieza2.get(k).setestado(0);
 										}
 									}
-									cab.setposx(nposix);
-									cab.setposy(nposiy);
-									pieza1.set(i,cab);
-									cp.actualizarpieza(pieza1,pieza2,id1, id2,idpart);
-									message = "Movimiento exitoso";
-									JOptionPane.showMessageDialog(null, message);
-									puede = true;
+									for (int t = 0; t < 16; t++) {
+										if(( nposix == pieza1.get(t).getposx())&&(nposiy == pieza1.get(t).getposy())&&(1 == pieza1.get(t).getestado())){
+										cab.setposx(nposix);
+										cab.setposy(nposiy);
+										pieza1.set(i,cab);
+										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
+										message = "Movimiento exitoso";
+										JOptionPane.showMessageDialog(null, message);
+										puede = true;
+										}
+									}
+									
 								}
 								return puede ;
 							}
@@ -156,13 +165,18 @@ public class ControladorLogin {
 											pieza2.get(k).setestado(0);
 										}
 									}
-									reina.setposx(nposix);
-									reina.setposy(nposiy);
-									pieza1.set(i,reina);
-									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
-									message = "Movimiento exitoso";
-									JOptionPane.showMessageDialog(null, message);
-									puede = true;
+									for (int t = 0; t < 16; t++) {
+										if(( nposix == pieza1.get(t).getposx())&&(nposiy == pieza1.get(t).getposy())&&(1 == pieza1.get(t).getestado())){
+										reina.setposx(nposix);
+										reina.setposy(nposiy);
+										pieza1.set(i,reina);
+										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
+										message = "Movimiento exitoso";
+										JOptionPane.showMessageDialog(null, message);
+										puede = true;
+										}
+									}
+									
 								}
 								return puede ;
 							};
@@ -179,13 +193,18 @@ public class ControladorLogin {
 											pieza2.get(k).setestado(0);
 										}
 									}
-									rey.setposx(nposix);
-									rey.setposy(nposiy);
-									pieza1.set(i,rey);
-									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
-									message = "Movimiento exitoso";
-									JOptionPane.showMessageDialog(null, message);
-									puede = true;
+									for (int t = 0; t < 16; t++) {
+										if(( nposix == pieza1.get(t).getposx())&&(nposiy == pieza1.get(t).getposy())&&(1 == pieza1.get(t).getestado())){
+										rey.setposx(nposix);
+										rey.setposy(nposiy);
+										pieza1.set(i,rey);
+										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
+										message = "Movimiento exitoso";
+										JOptionPane.showMessageDialog(null, message);
+										puede = true;
+										}
+									}
+									
 								}
 								return puede ;
 							};
@@ -202,13 +221,18 @@ public class ControladorLogin {
 											pieza2.get(k).setestado(0);
 										}
 									}
-									torr.setposx(nposix);
-									torr.setposy(nposiy);
-									pieza1.set(i,torr);
-									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
-									message = "Movimiento exitoso";
-									JOptionPane.showMessageDialog(null, message);
-									puede = true;
+									for (int t = 0; t < 16; t++) {
+										if(( nposix == pieza1.get(t).getposx())&&(nposiy == pieza1.get(t).getposy())&&(1 == pieza1.get(t).getestado())){
+										torr.setposx(nposix);
+										torr.setposy(nposiy);
+										pieza1.set(i,torr);
+										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
+										message = "Movimiento exitoso";
+										JOptionPane.showMessageDialog(null, message);
+										puede = true;
+										}
+									}
+		
 								}
 								return puede ;
 							};
@@ -231,13 +255,18 @@ public class ControladorLogin {
 											break;
 										}
 									}
-									peon.setposx(nposix);
-									peon.setposy(nposiy);
-									pieza1.set(i,peon);
-									cp.actualizarpieza(pieza1,pieza2,id1,id2,idpart);
-									message = "Movimiento exitoso";
-									JOptionPane.showMessageDialog(null, message);
-									puede = true;
+									for (int t = 0; t < 16; t++) {
+										if(( nposix == pieza1.get(t).getposx())&&(nposiy == pieza1.get(t).getposy())&&(1 == pieza1.get(t).getestado())){
+										peon.setposx(nposix);
+										peon.setposy(nposiy);
+										pieza1.set(i,peon);
+										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
+										message = "Movimiento exitoso";
+										JOptionPane.showMessageDialog(null, message);
+										puede = true;
+										}
+									}
+									
 								}
 								return puede ;
 							};
