@@ -12,7 +12,7 @@ public class Torre extends Pieza {
 	
 	
 	
-	public Boolean movPerm(int x, char y){
+	public Boolean movPerm(int y, char x){
 		Boolean resultado;
 		
 		resultado = false;

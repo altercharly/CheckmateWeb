@@ -241,6 +241,7 @@ public class ControladorLogin {
 							if ( 'p' == nombre){
 								color = pieza1.get(i).getcolor();
 								estado = pieza1.get(i).getestado();
+								puede = true;
 								Peon peon = new Peon(nombre, color, posix, posiy, estado);
 								puedepeon = peon.movPerm(nposiy, nposix);
 								if (true == puedepeon){
@@ -261,9 +262,9 @@ public class ControladorLogin {
 										peon.setposy(nposiy);
 										pieza1.set(i,peon);
 										cp.actualizarpieza(pieza1,pieza2, id1, id2,idpart);
-										message = "Movimiento exitoso";
+										message = "Movimiento invalido";
 										JOptionPane.showMessageDialog(null, message);
-										puede = true;
+										puede = false;
 										}
 									}
 									

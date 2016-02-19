@@ -12,12 +12,12 @@ public class Peon extends Pieza {
 	
 	
 	
-	public Boolean movPerm(int x, char y){
+	public Boolean movPerm(int y, char x){
 		
 		Boolean resultado;
 		resultado = false;
 		
-		if( 'w' == this.getcolor()){
+		if( 'b' == this.getcolor()){
 			if((y == this.getposy()+1) && (x == this.getposx() )){
 				resultado = true;
 				return resultado;
@@ -26,7 +26,7 @@ public class Peon extends Pieza {
 				return resultado;
 			}
 		}
-		else if( 'b' == this.getcolor()){
+		else if( 'w' == this.getcolor()){
 			if((y == this.getposy()-1) && (x == this.getposx() )){
 				resultado = true;
 				return resultado;

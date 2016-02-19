@@ -12,7 +12,7 @@ public class Caballo extends Pieza {
 	
 	
 	
-	public Boolean movPerm(int x, char y){
+	public Boolean movPerm(int y, char x){
 		Boolean resultado;
 		char xpos;
 		int ypos;
