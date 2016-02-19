@@ -26,7 +26,7 @@
 ArrayList<Pieza> piezas = u.getpiezas();
 for (int i = 0; i < 16; i++) {
 	if ((piezas.get(i)).getestado() == 1) {%>
-		<li><%=(piezas.get(i)).getname()%> ("<%=(piezas.get(i)).getposx()%> ,<%=(piezas.get(i)).getposy()%> )</li>   
+		<li><%=(piezas.get(i)).getname()%> (<%=(piezas.get(i)).getposx()%> ,<%=(piezas.get(i)).getposy()%> )</li>   
 		<%}
 	}%> 
 </ul>
@@ -38,7 +38,7 @@ for (int i = 0; i < 16; i++) {
 ArrayList<Pieza> piezas2 = cont.getpiezas();
 for (int j = 0; j < 16; j++) {
 	if ((piezas2.get(j)).getestado() == 1) {%>
-		<li><%=(piezas2.get(j)).getname()%> ("<%=(piezas2.get(j)).getposx()%> ,<%=(piezas2.get(j)).getposy()%> )</li>   
+		<li><%=(piezas2.get(j)).getname()%> (<%=(piezas2.get(j)).getposx()%> ,<%=(piezas2.get(j)).getposy()%> )</li>   
 		<%}
 	}%>
 </ul>	
