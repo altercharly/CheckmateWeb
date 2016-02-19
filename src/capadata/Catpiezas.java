@@ -39,7 +39,6 @@ public class Catpiezas {
 		
 		
 		PreparedStatement sentencia=null;
-		Connection con = FactoryConexion.getInstancia().getConn();
 		
 		for (Pieza i: pieza1) {
 			nombre = i.getname();
@@ -107,11 +106,10 @@ public class Catpiezas {
 		char posx;
 		char color;
 		int estado;
-		String sql;
+		//String sql;
 		
 		PreparedStatement sentencia=null;
-		Connection con = FactoryConexion.getInstancia().getConn();
-		
+				
 		for (Pieza i: pieza1){
 			nombre = i.getname();
 			posx = i.getposx();
@@ -120,10 +118,11 @@ public class Catpiezas {
 			estado = i.getestado();
 			try {
 			//falta corregir la consulta
-			sql = "UPDATE pieza SET nombre = ?, posx = ?, posy = ?, color= ?, estado = ? WHERE id = ? AND idpartida = ?";
+			sentencia= FactoryConexion.getInstancia().getConn().prepareStatement(
+					"UPDATE pieza SET nombre = ?, posx = ?, posy = ?, color= ?, estado = ? WHERE id = ? AND idpartida = ?");
 			
 			
-				sentencia = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+			
 				sentencia.setInt(1,nombre);
 				sentencia.setInt(2, posx);
 				sentencia.setInt(3,posy);
@@ -143,10 +142,9 @@ public class Catpiezas {
 			color = j.getcolor();
 			estado = j.getestado();
 				
-												
-			sql = "UPDATE `pieza` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
 			try {
-				sentencia = (PreparedStatement) con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
+				sentencia= FactoryConexion.getInstancia().getConn().prepareStatement(
+						"UPDATE pieza SET nombre = ?, posx = ?, posy = ?, color= ?, estado = ? WHERE id = ? AND idpartida = ?");
 				sentencia.setInt(1,nombre);
 				sentencia.setInt(2, posx);
 				sentencia.setInt(3,posy);

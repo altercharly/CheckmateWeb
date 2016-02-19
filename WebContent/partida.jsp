@@ -16,7 +16,7 @@
 <% Usuario cont = (Usuario)session.getAttribute("jug2"); %>
 <% Partida p = (Partida)session.getAttribute("partida"); %>
 <h1 aligne="center" style="font-weight:bold"> IdPartida: <%=p.getid() %></h1> 
-<p aligne="center" color="red"> Turno jugador: <%cont.getApellido() ; %> <%cont.getNombre() ; %></p>
+<p aligne="center" color="red"> Turno jugador: <%=cont.getApellido()%> <%=cont.getNombre() %></p>
 <tr>
 <p aligne="center"> Tablero: </p>
 <td>
