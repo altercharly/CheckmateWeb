@@ -53,7 +53,7 @@ public class Catpiezas {
 			
 			try {
 			sentencia= FactoryConexion.getInstancia().getConn().prepareStatement(
-			"insert into pieza (nombre,color,posx,posy,estado,idpart,id1) values (?,?,?,?,?,?,?)");
+			"insert into pieza (nombre,color,posx,posy,estado,idpartida,idusuario) values (?,?,?,?,?,?,?)");
 		
 				sentencia.setInt(1, nombre);
 				sentencia.setInt(2, color);
@@ -76,7 +76,7 @@ public class Catpiezas {
 				
 			try {									
 			//sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
-			sentencia= FactoryConexion.getInstancia().getConn().prepareStatement("insert into pieza (nombre,color,posx,posy,estado,idpart,id1) values (?,?,?,?,?,?,?)");
+			sentencia= FactoryConexion.getInstancia().getConn().prepareStatement("insert into pieza (nombre,color,posx,posy,estado,idpartida,idusuario) values (?,?,?,?,?,?,?)");
 			
 				sentencia.setInt(1,nombre);
 				sentencia.setInt(2, color);

@@ -76,7 +76,7 @@ public class Partida {
 			pieza1.add(peon);
 			posix ++;
 		}
-		
+		 jug1.setpiezas(pieza1);
 		
 		jugador2 = jug2;
 		ArrayList<Pieza> pieza2 = new ArrayList<Pieza>();
@@ -123,6 +123,7 @@ public class Partida {
 			pieza2.add(peon);
 			posix ++;
 		}
+		jug2.setpiezas(pieza2);
 	}
 	
 	
