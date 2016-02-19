@@ -41,12 +41,12 @@ public class Catpiezas {
 		PreparedStatement sentencia=null;
 		Connection con = FactoryConexion.getInstancia().getConn();
 		
-		for (int i = 0; i < 16; i++) {
-			nombre = pieza1.get(i).getname();
-			posx = pieza1.get(i).getposx();
-			posy = pieza1.get(i).getposy();
-			color = pieza1.get(i).getcolor();
-			estado = pieza1.get(i).getestado();
+		for (Pieza i: pieza1) {
+			nombre = i.getname();
+			posx = i.getposx();
+			posy = i.getposy();
+			color = i.getcolor();
+			estado = i.getestado();
 			
 			//falta terminar de corregir la consulta
 			//sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
@@ -67,12 +67,12 @@ public class Catpiezas {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		for (int j = 0; j < 16; j++) {
-			nombre = pieza2.get(j).getname();
-			posx = pieza2.get(j).getposx();
-			posy = pieza2.get(j).getposy();
-			color = pieza2.get(j).getcolor();
-			estado = pieza2.get(j).getestado();
+		for (Pieza j: pieza2) {
+			nombre = j.getname();
+			posx = j.getposx();
+			posy = j.getposy();
+			color = j.getcolor();
+			estado = j.getestado();
 				
 			try {									
 			//sql = "INSERT into `pieza` VALUES ( `nombre` = ?, `color`= ?, `posx` = ?, `posy` = ?,  `estado` = ?, `idpartida` = ?, `idusuario` = ?);";
@@ -112,12 +112,12 @@ public class Catpiezas {
 		PreparedStatement sentencia=null;
 		Connection con = FactoryConexion.getInstancia().getConn();
 		
-		for (int i = 0; i < 16; i++) {
-			nombre = pieza1.get(i).getname();
-			posx = pieza1.get(i).getposx();
-			posy = pieza1.get(i).getposy();
-			color = pieza1.get(i).getcolor();
-			estado = pieza1.get(i).getestado();
+		for (Pieza i: pieza1){
+			nombre = i.getname();
+			posx = i.getposx();
+			posy = i.getposy();
+			color = i.getcolor();
+			estado = i.getestado();
 			try {
 			//falta corregir la consulta
 			sql = "UPDATE pieza SET nombre = ?, posx = ?, posy = ?, color= ?, estado = ? WHERE id = ? AND idpartida = ?";
@@ -136,12 +136,12 @@ public class Catpiezas {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		for (int j = 0; i < 16; i++) {
-			nombre = pieza2.get(j).getname();
-			posx = pieza2.get(j).getposx();
-			posy = pieza2.get(j).getposy();
-			color = pieza2.get(j).getcolor();
-			estado = pieza2.get(j).getestado();
+		for (Pieza j: pieza2) {
+			nombre = j.getname();
+			posx = j.getposx();
+			posy = j.getposy();
+			color = j.getcolor();
+			estado = j.getestado();
 				
 												
 			sql = "UPDATE `pieza` SET `nombre` = ?, `posx` = ?, `posy` = ?, `color`= ?, `estado` = ? WHERE `id` = ? AND `idpartida` = ? ;";
